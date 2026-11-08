@@ -1,0 +1,6 @@
+{
+  "name": "شبكة البشير نت - تسجيل الدخول",
+  "description": "صفحة تسجيل الدخول لشبكة البشير نت وملف 23733.zip",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

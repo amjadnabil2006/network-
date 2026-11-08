@@ -1,1 +1,210 @@
 @import "tailwindcss";
+
+@layer base {
+  html, body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif, Arial, system-ui;
+    text-align: center;
+    overflow-x: hidden;
+    transition: background 0.4s ease, color 0.4s ease;
+  }
+}
+
+/* Original .wrap styles with ENHANCED 3D, Glow & Float Effects */
+.original-wrap {
+  width: 100%;
+  max-width: 410px;
+  margin: 15px auto;
+  padding: 30px 22px;
+  border-style: dashed;
+  border-width: 3px;
+  box-sizing: border-box;
+  position: relative;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease, background-color 0.35s ease;
+  border-radius: 16px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Gentle Periodic Floating Effect (حركة دورية هادئة) */
+@keyframes gentleFloatBox {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.gentle-floating-card {
+  /* Page is completely static */
+  animation: none;
+}
+
+/* Subtle continuous breath effect for pricing cards */
+@keyframes cardBreath {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.22), 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.card-breath-effect {
+  animation: cardBreath 3.5s ease-in-out infinite;
+}
+
+/* Original Speed Dropdown with Enhanced Glow & Transitions */
+.original-speed {
+  width: 100%;
+  height: 44px;
+  padding: 3px 20px 3px 40px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  font-weight: 700;
+  outline: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out, transform 0.2s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.original-speed:hover {
+  transform: translateY(-1px);
+}
+
+.original-speed:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.35), 0 0 16px rgba(56, 189, 248, 0.35);
+}
+
+/* Original Card Input with Focus Glow */
+.original-input {
+  width: 100%;
+  height: 44px;
+  padding: 3px 20px 3px 40px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  outline: 0;
+  box-sizing: border-box;
+  text-align: center;
+  transition: box-shadow 0.3s ease-in-out, background-color 0.2s ease, transform 0.2s ease, border-color 0.3s ease;
+}
+
+.original-input:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.35), 0 0 16px rgba(56, 189, 248, 0.35);
+}
+
+/* Original Submit Button with Shimmer & Click Ripple */
+@keyframes submitPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    transform: scale(1.025);
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.35), 0 6px 16px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.original-submit {
+  border: 0;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  height: 46px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease-in-out, transform 0.15s ease, box-shadow 0.3s ease;
+  animation: submitPulse 3s ease-in-out infinite;
+}
+
+.original-submit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.7s ease;
+}
+
+.original-submit:hover::before {
+  left: 100%;
+}
+
+.original-submit:hover {
+  transform: translateY(-1px);
+}
+
+.original-submit:active {
+  transform: translateY(1px);
+}
+
+/* Original Icons */
+.original-ico {
+  height: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 14px;
+  margin-left: 14px;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* Original Table with Row Hover */
+.original-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.original-table td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 8px 4px 8px 0;
+  text-align: center;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.original-table td:first-child {
+  font-weight: 700;
+}
+
+/* Original Banner Hover Lift */
+.banner-original {
+  border-radius: 6px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.banner-original:hover {
+  filter: brightness(1.04);
+}
+
+/* Original Phone Glow */
+.phone-original {
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+
+.phone-original:hover {
+  transform: scale(1.05);
+}
